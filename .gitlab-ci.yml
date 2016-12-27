@@ -1,7 +1,8 @@
+image: jimmycuadra/rust
+
 pages:
   script:
-  - mkdir public
-  - cp -r raw_export/* public
+  - build.sh
   artifacts:
     paths:
     - public
