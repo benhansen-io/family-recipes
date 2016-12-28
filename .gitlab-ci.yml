@@ -2,7 +2,7 @@ image: jimmycuadra/rust
 
 pages:
   script:
-  - build.sh
+  - ./build.sh
   artifacts:
     paths:
     - public
