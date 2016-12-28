@@ -42,7 +42,7 @@ fn main() {
         let mut entry = json::Object::new();
         let title = get_data_from_recipe(&path_str);
         entry.insert("name".to_string(), Json::String(title));
-        entry.insert("path".to_string(), Json::String(path_bufer.file_name().unwrap().to_str().unwrap().to_string()));
+        entry.insert("path".to_string(), Json::String("recipes/".to_string() + path_bufer.file_name().unwrap().to_str().unwrap()));
         entries.push(Json::Object(entry));
     }
     let index: Json = Json::Array(entries);
