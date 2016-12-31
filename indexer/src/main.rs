@@ -1,9 +1,5 @@
 extern crate rustc_serialize;
 extern crate regex;
-extern crate encoding;
-
-use encoding::{Encoding, DecoderTrap};
-use encoding::all::ISO_8859_1;
 
 use rustc_serialize::json::{self, Json};
 use std::io::prelude::*;
@@ -23,9 +19,9 @@ fn test_get_title_from_html() {
 // Right now just return the title but in the future perhaps more.
 fn get_data_from_recipe(path: &str) -> String {
     let mut file = std::fs::File::open(path).unwrap();
-    let mut contents = Vec::new();
-    file.read_to_end(&mut contents).unwrap();
-    get_title_from_html(&ISO_8859_1.decode(&contents, DecoderTrap::Strict).unwrap()).to_string()
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).unwrap();
+    get_title_from_html(&contents).to_string()
 }
 
 
