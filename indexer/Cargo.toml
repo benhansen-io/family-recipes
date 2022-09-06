@@ -4,5 +4,5 @@ version = "0.1.0"
 authors = ["Ben Hansen <benhansenslc@gmail.com>"]
 
 [dependencies]
-regex = "0.1"
+regex = { version = "1.6", default_features = false, features = [ "std" ] }
 rustc-serialize = "0.3"
