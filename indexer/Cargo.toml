@@ -2,7 +2,8 @@
 name = "indexer"
 version = "0.1.0"
 authors = ["Ben Hansen <benhansenslc@gmail.com>"]
+edition = "2021"
 
 [dependencies]
-regex = { version = "1.6", default_features = false, features = [ "std" ] }
+regex = { version = "1.10", default_features = false, features = [ "std" ] }
 rustc-serialize = "0.3"
